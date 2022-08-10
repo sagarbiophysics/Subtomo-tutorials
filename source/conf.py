@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.abspath('./_ext'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Subtomogram averaging tutorials'
+project = 'Subtomo'
 copyright = 'William Wan, Sagar Khavnekar, licensed under GPLv3'
 author = 'William Wan, Sagar Khavnekar'
 

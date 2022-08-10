@@ -1,8 +1,8 @@
 Subtomogram Averaging Tutorials
 ===================================
 
- .. Documentation for methods used in `Multishot tomography <https://www.biorxiv.org/content/10.1101/2022.04.10.487763v1>`_
-Tutorials for subtomogram averaging as taught at the EMBO PRactical Course: 'Advances in cryo-electron microscopy and 3D image processing. <https://www.embl.org/about/info/course-and-conference-office/events/cry22-01/>'_'
+.. Documentation for methods used in `Multishot tomography <https://www.biorxiv.org/content/10.1101/2022.04.10.487763v1>`_
+Tutorials for subtomogram averaging as taught at the EMBO PRactical Course: `Advances in cryo-electron microscopy and 3D image processing. <https://www.embl.org/about/info/course-and-conference-office/events/cry22-01/>`_
 
 
 .. note::

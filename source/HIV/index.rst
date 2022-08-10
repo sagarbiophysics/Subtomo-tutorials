@@ -1,9 +1,11 @@
-Tomography 5
+HIV dataset
 =======================================
-Multishot Tomography using Tomography 5
+
+Subtomogram averaging tutorial for the EMPIAR XXXXX HIV dataset. 
+
 
 .. toctree::
    :maxdepth: 2
-   Tomo_5
+   GettingStarted
    
    

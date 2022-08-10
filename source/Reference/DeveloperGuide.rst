@@ -77,7 +77,7 @@ Next sentence.
 
 A new paragraph.
 ``Keyword``, *emphasis by italic* and **emphasis by bold** are marked like this.
-You can cite a paper :cite:`Khavnekar2022.04.10.487763`.
+You can cite a paper :cite:`wan_briggs_2016`.
 A link to `rST documentation <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_.
 Note the underline.
 You can use LaTeX math :math:`\sum x_i^2`.

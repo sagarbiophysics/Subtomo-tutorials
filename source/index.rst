@@ -12,7 +12,7 @@ Tutorials for subtomogram averaging as taught at the EMBO PRactical Course: 'Adv
 Contents
 --------
 
--   :doc:`reading`
+-   :doc:`Reading`
 -   :doc:`Team`
 -   :doc:`HIV/index`
 -   :doc:`80S_insitu/index`
@@ -24,7 +24,7 @@ Contents
     :maxdepth: 2
     :hidden:
 
-    reading
+    Reading
     Team
     HIV/index
     80S_insitu/index

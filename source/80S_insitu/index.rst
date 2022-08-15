@@ -1,5 +1,5 @@
 *in situ* 80S Ribosomes
-=========================================================
+============
 
 This tutorial describes subtomogram averaging workflow for *in situ* 80S Ribosomes from PlasmaFIB (Arctis) milled lamellae on Yeast.
 

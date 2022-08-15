@@ -1,9 +1,9 @@
 Introduction
 ============
 
- In this session, we will work on the HIV immature capsid dataset (EMPIAR-10164). 
- Due to the limitations of the BAND platform, we will mainly be processing one tomogram. 
- The goals for this session include:
+In this session, we will work on the HIV immature capsid dataset (EMPIAR-10164). 
+Due to the limitations of the BAND platform, we will mainly be processing one tomogram. 
+The goals for this session include:
 
 - Setting up TOMOMAN parameter files
 - Performing preprocessing using TOMOMAN

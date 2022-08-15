@@ -1,7 +1,7 @@
 HIV dataset
 =======================================
 
-Subtomogram averaging tutorial for the EMPIAR XXXXX HIV dataset. 
+In this session, we will work on the HIV immature capsid dataset (EMPIAR-10164). 
 
 
 .. toctree::

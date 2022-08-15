@@ -28,5 +28,6 @@ Copy the entire /scratch/subtomo_practical/HIV_practical/ directory to your own 
 This directory contains a tomo/ folder, with frames/ and rawdata/ subfolders. 
 The frames/subfolder contains the raw .mrcframes for TS_01, wile the rawdata/ folder contains the SerialEM .mdocfile for this tilt series. 
 
+
 .. note::
      The data contained in this folder are just symbolic links; this is to minimize the time required for copying the raw data and extra use of storage space.

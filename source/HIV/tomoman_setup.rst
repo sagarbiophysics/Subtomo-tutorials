@@ -72,10 +72,10 @@ Preparing to Run TOMOMAN on SLURM
 
 To run TOMOMAN on SLURM, we use a bash script to manage the cluster parameters. 
 
-#.	Copy the bash script from /scratch/subtomo_practical/SLURM_scripts/run_tomoman_slurm.sh to the tomogram root_dir.  
-#.	Open the bash script. The run options block sets the SLURM job settings. 
+1.	Copy the bash script from /scratch/subtomo_practical/SLURM_scripts/run_tomoman_slurm.sh to the tomogram root_dir.  
+2.	Open the bash script. The run options block sets the SLURM job settings. 
    The default settings are appropriate for running a GPU task for this practical.
-#.	The directories field has the parameters for the root_dir and the TOMOMAN parameter file to run. 
+3.	The directories field has the parameters for the root_dir and the TOMOMAN parameter file to run. 
    Set the root_dir to the tomogram directory. 
 
 

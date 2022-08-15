@@ -36,9 +36,9 @@ Sorting new data is performed using the tomoman_sortnew.param file.
 Open this file in the MATLAB editor by double clicking it. 
 Types of parameters are typically broken into comment blocks.
 
-#.	The directory parameter block contains information about working directories. \
-   The root_dir should already be set from copying. \
-   For this dataset, the raw_stack_dir and raw_frame_dir should be rawdata/ and frames/, respectively. 
+#. The directory parameter block contains information about working directories. \
+The root_dir should already be set from copying. \
+For this dataset, the raw_stack_dir and raw_frame_dir should be rawdata/ and frames/, respectively. 
 #.	The tomolist block contains filenames for TOMOMAN’s output files. \
    This should already be set during copying.
 #.	The filename parameters are for the raw stacks generated during data collection. \

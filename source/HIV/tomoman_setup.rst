@@ -16,7 +16,7 @@ These parameter files are plain-text files that tell TOMOMAN which processing st
 #. Copy empty parameter files, using the current directory as the `root_dir`, and using default filenames TOMOMAN filenames.
 
 :: 
-
+   
    tomoman_copy_paramfiles([pwd,'/']);
 
 Parameter files for all TOMOMAN tasks are now copied into the `root_dir`. 
@@ -54,8 +54,9 @@ Types of parameters are typically broken into comment blocks.
    Here raw stacks refer to tilt series image stacks generated during data collection; these are typically just non-motion corrected summed frame stacks, so they can be safely ignored. 
    TOMOMAN also allows you to ignore missing frames, though this is not recommended.  
 7.	After setting your parameters, run the TOMOMAN sortnew task:
-   ::
 
+   ::
+      
       tomoman([pwd,'/'],'tomoman_sortnew.param');
 
 The tilt series folder should now be properly set. 

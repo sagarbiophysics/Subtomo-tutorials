@@ -12,14 +12,14 @@ These parameter files are plain-text files that tell TOMOMAN which processing st
 
 
 
-#. In MATLAB, go to the `tomo/` folder. 
-#. Copy empty parameter files, using the current directory as the `root_dir`, and using default filenames TOMOMAN filenames.
+#. In MATLAB, go to the ``tomo/`` folder. 
+#. Copy empty parameter files, using the current directory as the ``root_dir``, and using default filenames TOMOMAN filenames.
 
 :: 
    
    tomoman_copy_paramfiles([pwd,'/']);
 
-Parameter files for all TOMOMAN tasks are now copied into the `root_dir`. 
+Parameter files for all TOMOMAN tasks are now copied into the ``root_dir``. 
 While files for all tasks are copied, they aren't necessarily all used, so you can delete them as you wish. 
 
 
@@ -27,7 +27,7 @@ Sorting New Stacks
 ---------------
 
 The first step in TOMOMAN processing is sorting new data into directories for each tilt series. 
-During this step, TOMOMAN scans a `raw_stack_dir` for `.mdoc` files. 
+During this step, TOMOMAN scans a ``raw_stack_dir`` for ``.mdoc`` files. 
 For each one it finds, it generates a new folder to contain all the preprocessing data, links the .mdoc file, creates a frames/ subdirectory, parses frame names from the .mdoc file, and generates links for all frames from the raw_frame_dir to the frames/ subdirectory. 
 Sorting new data is performed using the tomoman_sortnew.param file. 
 Open this file in the MATLAB editor by double clicking it. 

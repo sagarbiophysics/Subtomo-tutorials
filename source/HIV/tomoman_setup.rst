@@ -59,7 +59,9 @@ Types of parameters are typically broken into comment blocks.
    TOMOMAN also allows you to ignore missing frames, though this is not recommended. 
  
 #.	After setting your parameters, run the TOMOMAN sortnew task:
-   tomoman([pwd,'/'],'tomoman_sortnew.param');
+   
+   ::
+      tomoman([pwd,'/'],'tomoman_sortnew.param');
 
 The tilt series folder should now be properly set. 
 
@@ -72,12 +74,12 @@ Preparing to Run TOMOMAN on SLURM
 
 To run TOMOMAN on SLURM, we use a bash script to manage the cluster parameters. 
 
-1.	Copy the bash script from /scratch/subtomo_practical/SLURM_scripts/run_tomoman_slurm.sh to the tomogram root_dir. 
+#.	Copy the bash script from /scratch/subtomo_practical/SLURM_scripts/run_tomoman_slurm.sh to the tomogram root_dir. 
  
-2.	Open the bash script. The run options block sets the SLURM job settings. 
+#.	Open the bash script. The run options block sets the SLURM job settings. 
    The default settings are appropriate for running a GPU task for this practical.
 
-3.	The directories field has the parameters for the root_dir and the TOMOMAN parameter file to run. 
+#.	The directories field has the parameters for the root_dir and the TOMOMAN parameter file to run. 
    Set the root_dir to the tomogram directory. 
 
 

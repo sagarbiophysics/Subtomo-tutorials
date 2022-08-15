@@ -3,6 +3,8 @@ TOMOMAN setup
 
 In this section, we will go over the process of setting up the TOMOMAN workflow.
 
+.. highlight:: matlab
+
 
 Initializing TOMOMAN Parameter files
 ---------------

@@ -24,9 +24,9 @@ Test Dataset
 ----------------
 
 The test data we will be using for this practical is tilt series TS_01 from the EMPIAR-10164 dataset. 
-Copy the entire /scratch/subtomo_practical/HIV_practical/ directory to your own working directory. 
-This directory contains a tomo/ folder, with frames/ and rawdata/ subfolders. 
-The frames/subfolder contains the raw .mrcframes for TS_01, wile the rawdata/ folder contains the SerialEM .mdocfile for this tilt series. 
+Copy the entire `/scratch/subtomo_practical/HIV_practical/` directory to your own working directory. 
+This directory contains a `tomo/` folder, with `frames/` and `rawdata/` subfolders. 
+The `frames/subfolder` contains the `raw .mrc` frames for `TS_01`, wile the `rawdata/` folder contains the SerialEM `.mdoc` file for this tilt series. 
 
 
 .. note::

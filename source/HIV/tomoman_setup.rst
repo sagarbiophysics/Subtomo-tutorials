@@ -14,8 +14,8 @@ These parameter files are plain-text files that tell TOMOMAN which processing st
 
 
 
-#. In MATLAB, go to the ``tomo/`` folder. 
-#. Copy empty parameter files, using the current directory as the ``root_dir``, and using default filenames TOMOMAN filenames.
+1. In MATLAB, go to the ``tomo/`` folder. 
+2. Copy empty parameter files, using the current directory as the ``root_dir``, and using default filenames TOMOMAN filenames.
 
 :: 
    

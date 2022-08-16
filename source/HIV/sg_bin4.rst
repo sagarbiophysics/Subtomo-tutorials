@@ -77,7 +77,7 @@ Given that our resolution is so high, we can safely set our low pass radius to ~
 Since we have limited computational power during this practical, we can play with some methods for cutting down computation time. 
 Set the angular iterations to 2 and the search mode to ``“shc”``. 
 
-..note::
+.. note::
      ``“shc”`` stands for Stochastic Hill Climbing (SHC). 
      In standard hill climbing, the goal is to sample all possible orientations (in our search range) and take the highest scoring one; i.e. moving up the hill as quickly as possible. 
      SHC instead randomizes the list of search angles, scores the prior best angle, and accepts the first better orientation; you are still moving up the hill, but potentially not as quickly as possible. 
@@ -108,7 +108,7 @@ This will likely be similar to your alignment mask, but smaller in radius.
 One I made was:
 
 ::
-
+     
      fsc_mask = sg_cylinder(64,12,22,3,[33,33,32]);
      sg_mrcwrite('masks/fsc_mask.mrc',fsc_mask);
 

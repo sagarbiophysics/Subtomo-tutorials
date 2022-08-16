@@ -1,6 +1,8 @@
 Bin8 Subtomogram Averaging with STOPGAP
 =============
 
+.. highlight:: matlab
+
 
 In this part, we will first prepare the necessary files and folders for a STOPGAP subtomogram averaging job. 
 Then we will perform “reference-free” subtomogram averaging on a single HIV particle; this will serve as a de novo reference for the whole dataset. 
@@ -208,8 +210,7 @@ You can covert resolution to Fourier pixels as:
 
 .. math::
      
-     fpix &=  
-     \frac{((boxsize * pixelsize))}{resolution}
+     fpix =  \frac{((boxsize * pixelsize))}{resolution}
 
 so for our settings, 60 Å is 5.76 Fourier pixels. 
 Since we cannot set fractional pixels, we can round to 6, which is a resolution of 57.6 Å.
@@ -341,11 +342,11 @@ Copy a set of STOPGAP bash scripts.
 2. Copy your final initial reference into the ``ref/`` folder, but rename as ``ref_1.mrc`` and etc… 
 Technically, the weighted reference is not required, only the halfsets. 
  
-2. Copy the full motivelist.
+3. Copy the full motivelist.
  
-2. Extract subtomograms. 
+4. Extract subtomograms. 
  
-2. Align the full dataset. 
+5. Align the full dataset. 
 This problem is distinct from the de novo structure determine we performed for the initial dataset. 
 This is because in de novo structure determination, we slow coax the structure out by iterative refinement and reducing our angular search space. 
 Here, we already have a good reference, so if our parameters are too coarse, we may generate a worse reference than the one we put in. 
@@ -353,11 +354,11 @@ As such, our goal is to align the full dataset to the same precision that we ali
 Therefore, the main parameter to change here is the angular iterations so that we sample wide enough. 
 Set your parameters and run 1 iteration of alignment. 
  
-2. After alignment, the reference should look less noisy, though the resolution is still limited by the binning. 
+6. After alignment, the reference should look less noisy, though the resolution is still limited by the binning. 
 The full motivelist is likely requires to much memory for the BAND sessions, so we can first distance clean the overlapping particles. 
 In this case, don’t apply a score cutoff, as we haven’t determined what it should be yet. 
  
-2. Convert the cleaned motivelist to AV3 format and open in Chimera. 
+7. Convert the cleaned motivelist to AV3 format and open in Chimera. 
 Determine an appropriate CC cutoff and parse the good particles by logical indexing. E.g.:
 
 ::
@@ -367,6 +368,6 @@ Determine an appropriate CC cutoff and parse the good particles by logical index
      new_motl = sg_motl_parse_type2(motl,idx);
      sg_motl_write2('allmotl_dclean_sclean_2.star',new_motl);
  
-2. Generate a new average with the cleaned motivelist. 
+8. Generate a new average with the cleaned motivelist. 
 Since we are already well beyond Nyquist, it’s unnecessary to perform any more angular refinement. 
 We can go on to rescaling the motivelist to bin4. 

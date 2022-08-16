@@ -1,6 +1,9 @@
 Bin4 Subtomogram Averaging with STOPGAP
 =============
 
+.. highlight:: matlab
+
+
 The main goal here is to prepare the motivelist for bin2 processing. This includes rescaling the motivelist, applying the shifts to the extraction positions, and splitting halfsets. 
 
 1. In MATLAB, we will re-number the particles and assign odd/even halfsets:

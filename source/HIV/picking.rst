@@ -1,6 +1,9 @@
 Particle picking
 ============
 
+.. highlight:: matlab
+
+
 In this section, we will pick spheres in UCSF Chimera using `Kun Qu’s Pick Particle plugin <https://www.biochem.mpg.de/7940000/Pick-Particle>`_. 
 We will then update these metadata on the tomolist and generate a STOPGAP motivelist of these particles. 
 We will then visualize the particle positions in UCSF chimera using `Kun Qu’s Place Object plugin <https://www.biochem.mpg.de/7939908/Place-Object>`_. 

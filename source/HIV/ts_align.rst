@@ -1,6 +1,9 @@
 Tilt-series alignment
 ============
 
+.. highlight:: matlab
+
+
 IMOD Preprocessing
 ----------------
 

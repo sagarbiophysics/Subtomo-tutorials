@@ -11,5 +11,8 @@ In this session, we will work on the HIV immature capsid dataset (EMPIAR-10164).
    ts_preprocess
    ts_align
    ts_reconstruct
+   picking
+   sg_bin8
+   sg_bin4
    
    

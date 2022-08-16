@@ -42,9 +42,12 @@ The parameters determined here will be used for CTF determination and tomogram r
 Start etomo using the .edf file generated during TOMOMAN’s IMOD preprocessing wrapper. 
 There should only be one .edf file, so a wild card can be used:
 
+
 ::
     $ etomo *.edf
- 
+
+
+
 2.	Though Fiducial Model Generation is marked as complete, it is still worth checking the automated results. 
 Click on the button on the left panel and go to the Track Beads tab. 
 To open current fiducial model, click the Fix Fiducial Model button. 

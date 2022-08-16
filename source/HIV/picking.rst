@@ -65,6 +65,7 @@ The parameters for this function are:
 ``padding`` – Removes particles around the edge of tomograms using padding distance; set to 16
 ``subset_list`` – Optional file listing  a subset of tomograms to process
 As an example:
+
 ::
 
      sg_motl_batch_sphere(‘tomolist.mat’, ’allmotl_1.star’, ’sphere’,  8 ,3.5, 1, 16, []);

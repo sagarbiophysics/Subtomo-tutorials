@@ -6,6 +6,7 @@ The main goal here is to prepare the motivelist for bin2 processing. This includ
 1. In MATLAB, we will re-number the particles and assign odd/even halfsets:
 
 ::
+
      sg_motl_assign_halfsets('allmotl_dclean_sclean_2.star','allmotl_dclean_sclean_halfset_2.star','oddeven',1);
 
 
@@ -16,6 +17,7 @@ The main goal here is to prepare the motivelist for bin2 processing. This includ
 2. Rescale the motivelist. This will rescale the extraction positions and apply shifts. 
 
 ::
+
      sg_motl_rescale('allmotl_dclean_sclean_halfset_2.star','allmotl_bin4_1.star',2,1);
  
 3. Make a new subtomogram averaging folder. 
@@ -34,6 +36,7 @@ Here, we will go over how to set up parameters for angular refinement.
 1. Before we can generate our first average, we need to provide an alignment mask. As with our bin8 processing, we can generate a simple sphere for this step. E.g.:
 
 ::
+
      sphere = sg_sphere(64,26,3);
      sg_mrcwrite('masks/sphere.mrc',sphere);
 
@@ -45,6 +48,7 @@ A cylinder should be sufficient again, but this time make one that only includes
 For my average, this works:
 
 ::
+
      cyl = sg_cylinder(64,26,22,3,[33,33,32]);
      sg_mrcwrite('masks/cyl_mask.mrc',cyl);
 
@@ -70,9 +74,11 @@ Given that our resolution is so high, we can safely set our low pass radius to ~
 Since we have limited computational power during this practical, we can play with some methods for cutting down computation time. 
 Set the angular iterations to 2 and the search mode to ``“shc”``. 
 
-``“shc”`` stands for Stochastic Hill Climbing (SHC). 
-In standard hill climbing, the goal is to sample all possible orientations (in our search range) and take the highest scoring one; i.e. moving up the hill as quickly as possible. 
-SHC instead randomizes the list of search angles, scores the prior best angle, and accepts the first better orientation; you are still moving up the hill, but potentially not as quickly as possible. 
+..note::
+     ``“shc”`` stands for Stochastic Hill Climbing (SHC). 
+     In standard hill climbing, the goal is to sample all possible orientations (in our search range) and take the highest scoring one; i.e. moving up the hill as quickly as possible. 
+     SHC instead randomizes the list of search angles, scores the prior best angle, and accepts the first better orientation; you are still moving up the hill, but potentially not as quickly as possible. 
+
 
 Even though alignments are somewhat suboptimal, it results in a better reference more quickly, so more iterations can be done in the same amount of time. 
 Low to medium resolution information, i.e. the information you are using to align, is typically still well-resolved, so further iterations will still improve the overall alignment of the dataset. 
@@ -99,6 +105,7 @@ This will likely be similar to your alignment mask, but smaller in radius.
 One I made was:
 
 ::
+
      fsc_mask = sg_cylinder(64,12,22,3,[33,33,32]);
      sg_mrcwrite('masks/fsc_mask.mrc',fsc_mask);
 

@@ -42,3 +42,39 @@ For these particles, I suggest setting the radius to between the two outermost l
 8. When all radii are set, press the save button. 
 For now, you can click reset to remove the spherical wireframes and close the Pick Particles tool. 
 Leave chimera open, but we can go back to MATLAB. 
+
+
+Generating Motivelists
+----------------
+
+After picking our spheres, we will first append this data to the tomolist, and use functions in the STOPGAP toolbox to generate a motivelist.
+
+1. We will add the picked spheres to the tomolist using the ``tm_metadata_add_new`` function. 
+The input parameters are ``root_dir``, ``tomolist_name``, and ``type``. 
+This function loads a tomolist, goes through each tilt series directory and scans the metadata/ subfolder for a subfolder named type, and stores the names of all files in that folder. 
+These types can then be used by other functions that parse the tomolist. In this case, type is ``‘sphere’``. 
+ 
+2. To generate a motivelist, we will use the sg_motl_batch_sphere function. 
+The parameters for this function are:
+``tomolist_name`` – Name of tomolist
+``output_name`` – Name of output motivelist (file extension should be .star)
+``metadata_type`` – Type of metadata; in this case ‘sphere’
+``binning`` – Binning of input files
+``p_dist`` – Distance between particles; set to half the true distance (e.g. 3.5) for oversampling
+``rand_phi`` – Randomize starting phi angles; set to 1
+``padding`` – Removes particles around the edge of tomograms using padding distance; set to 16
+``subset_list`` – Optional file listing  a subset of tomograms to process
+As an example:
+::
+
+     sg_motl_batch_sphere(‘tomolist.mat’, ’allmotl_1.star’, ’sphere’,  8 ,3.5, 1, 16, []);
+
+
+3. The Place Objects tool in chimera only opens AV3-format ``.em`` files, so we will need to convert our STOPGAP motivelist using the ``sg_motl_stopgap_to_av3`` function. 
+ 
+4. In chimera, from the main window open the Place Object function ``(Tools > Utilities > Place Object)``. 
+Open the ``.em`` file and apply. This will display the particle positions as spheres, colored by their class number. 
+ 
+5. To visualize particles with angular information, you can change the Object style using the dropdown. 
+Hexagons with voxel-size 0.1 are reasonable here. 
+Notice that the particle positions are evenly spaced with their planes along the surface of the spheres but their in-plane angles (phi) randomized. 

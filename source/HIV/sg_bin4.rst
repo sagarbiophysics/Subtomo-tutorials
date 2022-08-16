@@ -45,7 +45,7 @@ Here, we will go over how to set up parameters for angular refinement.
 
 
 2. Generate average using bin4 motivelist. 
- 
+
 3. Generate a new alignment mask. 
 A cylinder should be sufficient again, but this time make one that only includes the outer structured layer. 
 For my average, this works:
@@ -108,7 +108,7 @@ This will likely be similar to your alignment mask, but smaller in radius.
 One I made was:
 
 ::
-     
+
      fsc_mask = sg_cylinder(64,12,22,3,[33,33,32]);
      sg_mrcwrite('masks/fsc_mask.mrc',fsc_mask);
 

@@ -9,22 +9,24 @@ The main ones are tomogram thickness and Z shift.
 While the boundary model is mostly correct, that accounted for X axis tilt. 
 Since we zeroed this out, the ``thickness`` and ``Z shift`` parameters are off; the amount of error depends on how much X axis tilt was present. 
 
-1.	Generate tomogram and open in ``3dmod``. 
+1. enerate tomogram and open in ``3dmod``. 
 Check to see that the specimen is centered in Z and that the entire specimen is within the tomogram boundaries. 
  
-2.	If the specimen is not centered in Z, note the shift in pixels. 
+2. If the specimen is not centered in Z, note the shift in pixels. 
 Multiply this number by the binning factor and apply this to the ``Z shift`` parameter. 
 Re-generate the tomogram and check again.
  
-3.	If the specimen is not within the boundaries of the tomogram, increase the ``thickness`` until there is sufficient padding above and below the specimen.
+3. If the specimen is not within the boundaries of the tomogram, increase the ``thickness`` until there is sufficient padding above and below the specimen.
 
 .. note::
      while excessive padding doesn’t affect data quality, it does result in a larger tomogram which will impact the amount of storage space required, the speed of reading the tomogram, and data processing times. 
  
-4.	If your specimen has low contrast for picking, you can also use the SIRT-like filter here. 
+
+ 
+4. If your specimen has low contrast for picking, you can also use the SIRT-like filter here. 
 For this dataset, this is not required.
  
-5.	When you are satisfied with your tomogram, delete intermediate image stacks. 
+5. When you are satisfied with your tomogram, delete intermediate image stacks. 
 
 .. note:: 
     this removes the erased, aligned stack. 
@@ -88,12 +90,12 @@ Tomogram Reconstruction in NovaCTF
 Final tomogram reconstruction for subtomogram averaging will be performed using ``novaCTF``, which allows for 3D CTF-correction during reconstruction. 
 TOMOMAN will generate the appropriate scripts and output directory for running ``novaCTF`` and binning tomograms by Fourier cropping. 
 
-1.	Open ``tomoman_novactf.param``. 
+1. Open ``tomoman_novactf.param``. 
 The directory parameters should already be correct.
  
-2.	The parallelization parameters are only used when running within MATLAB, otherwise they are overridden with the SLURM parameters.
+2. The parallelization parameters are only used when running within MATLAB, otherwise they are overridden with the SLURM parameters.
  
-3.	Stack parameters for parameters for generating the aligned stacks prior to tomogram reconstruction. 
+3. Stack parameters for parameters for generating the aligned stacks prior to tomogram reconstruction. 
 ``ali_dim`` allows for resizing, though I recommend using the full image size. 
 ``erase_radius`` is for gold fiducial erasing; you should have this number from performing tilt series alignment. 
 ``taper_pixels`` is used to taper the edges of the rotated images when generating an aligned stack; 100 is usually sufficient. 
@@ -102,19 +104,20 @@ For this tutorial, to save on computation time, we will use an ``ali_stack_bin``
 .. note::
     binning is performed immediately prior to tomogram reconstruction, so all other parameters are in unbinned pixels.
  
-4.	The 3D CTF correction parameters set how novaCTF will perform 3D CTF correction. 
+
+4. The 3D CTF correction parameters set how novaCTF will perform 3D CTF correction. 
 I always recommend using the dose-filtered stack and correcting CTF using phase flipping. 
 For ``defocus_step``, smaller steps produce more precise results at the cost of more computation time (see :cite:`turonova_efficient_2017` for more information). 
 For this tutorial, set this to ``50``. 
  
-5.	Tomogram reconstruction parameters have some specifics on how to perform the reconstruction.
+5. Tomogram reconstruction parameters have some specifics on how to perform the reconstruction.
 I generally leave skip radial filtering. The ``tomo_bin`` parameter allows you to set the final binning factors desired. 
 Since we set ``ali_stack_bin`` to ``4``, the minimum allowed value here is ``4``. For this tutorial, set binnings of 4 and 8.
  
-6.	The ``output_dir_prefix`` sets the name of the tomogram output directories, which will be placed within the ``root_dir``. 
+6. The ``output_dir_prefix`` sets the name of the tomogram output directories, which will be placed within the ``root_dir``. 
 For instance, bin 4 tomograms will be placed in: ``[root_dir]/[output_dir_prefix]_bin4/``. 
 
-7.	The additional parameters include the ``recons_list``, which allows for reconstructing a subset of tomograms. 
+7. The additional parameters include the ``recons_list``, which allows for reconstructing a subset of tomograms. 
 Otherwise, all non-skipped tomograms in the tomolist will be reconstructed. 
  
 8.	``Fourier3D`` is a program for Fourier cropping volumes written by Beata Turoňová. 

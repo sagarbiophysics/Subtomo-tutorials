@@ -55,6 +55,7 @@ To open current fiducial model, click the Fix Fiducial Model button.
 3.	Generally, my preference is to pick fiducials that do not overlap during the tilt series and are present in every image. 
 Remove fiducials or add new ones from the model as necessary. 
 Save the model and run Track with Fiducial Model as Seed. 
+
 .. note::
     There seems to be an issue with Sobel filtering when using batch processing and etomo. 
     If you need to track the seed model again, disable Sobel filtering. 
@@ -64,6 +65,7 @@ Since this data was collected on a Titan Krios with a well-calibrated rotation a
  
 5.	Next, fix the center of the fiducial model. 
 I do this iteratively, reducing the Threshold for residual report at each iteration from 3.0, to 2.0, to 1.0. 
+
 .. note::
     the goal is not to minimize the residuals per se, instead you want to make sure the centering of the fiducial model is accurate. 
  
@@ -78,6 +80,7 @@ Create the tomogram.
  
 8.	Create boundary model by setting model points on the specimen edges. 
 This is typically easier to do viewing along the XZ planes. 
+
 .. note:: 
     If you have trouble seeing the boundaries, low pass filtering the slices may help.
  
@@ -112,6 +115,7 @@ We will use IMOD’s findbeads3d tool to generate a complete fiducial model.
 Findbeads3d attempts to find fiducials in a tomogram and back project them to the tilt series to generate a fiducial model.
  
 4.	Align and build tomogram. Etomo will generally set a high binning factor that is appropriate for fiducial detection. 
+
 .. note::
     Make sure the tomogram is thick enough to contain all fiducials. 
     Given the high binning factor, it might be easiest to just reconstruct a very thick tomogram. 
@@ -123,13 +127,15 @@ If beads are missing, they can be added via 3dmod’s bead fixer (which should a
 6.	Reproject model and check tilt series. 
 It can sometimes be easier to notice missing beads in the tilt series. 
 If you find missing beads, go back and add them on the tomogram and reproject again; this can be repeated iteratively. 
+
 .. note::
     there are likely to be beads outside the main field of view, i.e. present only in the tilted images. 
     As they are not within the tomogram, findbeads3d will not detect them. 
     However, since their projection artifacts aren’t as strong and they project only into the edges of the tomogram, it is usually find to leave them alone.
  
 7.	Erase beads and view erased stack.
+
 .. note::
     the diameter in this section is in pixels relative to your aligned stack, not the unbinned stack. 
     Given the inconsistency in bead sizes and the additional fringing artifacts caused by the CTF, it is usually best to iterate the diameters a few times to find the best result.
-     Write this number and the binning factor down; we will need it for the final reconstructions. 
+    Write this number and the binning factor down; we will need it for the final reconstructions. 

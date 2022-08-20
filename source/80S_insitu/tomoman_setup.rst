@@ -1,7 +1,8 @@
 TOMOMAN setup 
 =============
 
-In this section, we will go over the process of setting up the TOMOMAN workflow.
+In this section, we will go over the process of setting up the TOMOMAN workflow. 
+
 
 .. highlight:: matlab
 
@@ -14,15 +15,35 @@ These parameter files are plain-text files that tell TOMOMAN which processing st
 
 
 
-1. In MATLAB, go to the ``tomo/`` folder. 
+1. Open a new Terminal. 
 
 2. Copy empty parameter files, using the current directory as the ``root_dir``, and using default filenames TOMOMAN filenames.
 
+::
+
+    tomoman_copy_paramfiles.sh root_dir tomolist.mat tomoman.log all
+
+You can check the manual for ``tomoman_copy_paramfiles.sh`` using:
+
 :: 
    
-   tomoman_copy_paramfiles([pwd,'/']);
+   tomoman_copy_paramfiles.sh -help
 
-Parameter files for all TOMOMAN tasks are now copied into the ``root_dir``. 
+showing: 
+
+::
+
+    ***************TOMOMAN v 0.9***************
+    ***************Usage:
+                        tomoman_copy_paramfiles.sh /path/to/root_dir/ tomolist.mat tomolist.log all
+                        argument1 = Root directory (path/to/root_dir/)
+                        argument2 = tomolist name (tomolist.mat)
+                        argument3 = tomoman log (tomoman.log)
+                        argument4 = task ('all'. only supports copying all files.  )
+
+
+
+Parameter files for all TOMOMAN tasks are now copied into the ``root_dir/params``. 
 While files for all tasks are copied, they aren't necessarily all used, so you can delete them as you wish. 
 
 
@@ -33,7 +54,8 @@ The first step in TOMOMAN processing is sorting new data into directories for ea
 During this step, TOMOMAN scans a ``raw_stack_dir`` for ``.mdoc`` files. 
 For each one it finds, it generates a new folder to contain all the preprocessing data, links the ``.mdoc`` file, creates a ``frames/`` subdirectory, parses frame names from the ``.mdoc`` file, and generates links for all frames from the ``raw_frame_dir`` to the ``frames/`` subdirectory. 
 Sorting new data is performed using the tomoman_sortnew.param file. 
-Open this file in the MATLAB editor by double clicking it. 
+Open this file in the favourite text. 
+
 Types of parameters are typically broken into comment blocks.
 
 Sorting new data is performed using the ``tomoman_sortnew.param`` file. 
@@ -42,7 +64,7 @@ Types of parameters are typically broken into comment blocks.
 
 1.	The directory parameter block contains information about working directories. 
 The ``root_dir`` should already be set from copying. 
-For this dataset, the ``raw_stack_dir`` and ``raw_frame_dir`` should be ``rawdata/`` and ``frames/``, respectively. 
+For this dataset, the ``raw_stack_dir`` and ``raw_frame_dir`` should be ``raw_data/single`` and ``frames/``, respectively. 
 
 2.	The tomolist block contains filenames for TOMOMAN’s output files. 
 This should already be set during copying.
@@ -85,7 +107,7 @@ To run TOMOMAN on SLURM, we use a bash script to manage the cluster parameters.
 2.	Open the bash script. The run options block sets the SLURM job settings. 
 The default settings are appropriate for running a GPU task for this practical.
 
-3.	The directories field has the parameters for the ``root_dir`` and the TOMOMAN parameter file to run. 
+3.	The directories field has the parameters for the ``root_dir`` and the TOMOMAN ``parameter`` file to run. 
 Set the ``root_dir`` to the tomogram directory. 
 
 

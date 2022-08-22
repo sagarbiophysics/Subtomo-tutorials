@@ -31,7 +31,7 @@ TOMOMAN will parse one EER file per tilt-series for number of EER frames and wil
 Then, in a terminal, run the bash script. 
 
 .. note::
-     the SLURM jobs does not return any output to the terminal. To monitor progress, use the ``squeue`` function and check the log files. 
+     the SLURM jobs does not return any output to the terminal. To monitor progress, use the ``squeue`` function and check the log files using either ``cat`` or ``tail`` programs. 
 
 
 Cleaning Stacks

@@ -10,6 +10,11 @@ However, multiple fiducial-less methods have been developed. Notably:
 - fiducial-less alignment using ALIGNATOR
 - fiducial-less alignment using AreTomo
 
-For this practical, we will use TOMOMAN functionality for fiducial-less alignment using AreTomo. 
+For this practical, we will use TOMOMAN functionality for fiducial-less alignment using AreTomo.
+I would strongly recommend to familiarize oneself with the AreTomo Manual. 
 
+1. Open ``tomoman_aretomo.param`` file. 
+The directory parameters should already be correct.
+
+2. 
 

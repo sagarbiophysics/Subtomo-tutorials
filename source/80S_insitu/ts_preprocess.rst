@@ -15,16 +15,17 @@ The tomolist parameters should already be correctly set.
 Most tasks have some ``force`` parameter, which tells TOMOMAN to repeat the task on tilt series that have already been processed. 
 If set off, TOMOMAN only runs the task on tilt series that have not yet been processed. 
 
-3. This dataset was collected on a K2 in super-resolution mode. 
+3. This dataset was collected on a Falcon4 in Electron Event Representation (EER) mode. 
 The image_size parameter sets the output image size; in this case we want a normal resolution output image. 
-Set image_size to ``3712,3712``; this pads a K2 image by 2 pixels in one axis, but results in an image size with amenable to binning at factors of 2. 
+Set image_size to ``4096,4096``.
+Falcon4 has 4096 pixels along each axis and is readily amenable to binning at factors of 2. 
  
-4. The MotionCor2 block contains MotionCor2â€™s parameters. 
-For this dataset, most of the defaults are fine, but be sure to set the ``FtBin`` parameter to 2 so that the aligned frames are Fourier cropped back to normal size. 
-The ``Gpu`` parameter can be ignored when running on SLURM.
- 
-5. Since this dataset has .mrc frames, the EER block can be ignored. 
-We will not be doing noise2noise training, so odd/even stacks are not needed.
+4. The ``Relion's Motioncorr parameters`` block contains parameters for relevant Relion's motioncorr implementation. 
+For this dataset, most of the defaults are fine, but be sure to set the ``eer_dosefractions`` parameter to 10 so as to have 10 dose fractions. 
+TOMOMAN will parse one EER file per tilt-series for number of EER frames and will calculare ``eer_grouping`` parameter to obtain set number of ``eer_dosefractions``.
+
+.. note ::
+     As of now, TOMOMAN doesn't support motion correction for tilt-series data in EER format using anything other than constant exposure over the course of a tilt-series. 
  
 6. Submit this TOMOMAN job to SLURM. First, make sure the bash file has the correct ``paramfilename``. 
 Then, in a terminal, run the bash script. 

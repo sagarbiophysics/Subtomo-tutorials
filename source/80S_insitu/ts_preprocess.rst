@@ -5,9 +5,11 @@ Making Motion-Corrected Stacks
 ----------------
 
 The tilt series directory has been set up, but before we can examine it, we must first perform motion correction on the frames and assemble the motion corrected images into a stack. 
-For this dataset, we will be using MotionCor2. 
+For this dataset, we will be using Relion's implementation of MotionCor. 
 
-1. The tomolist parameters should already be correctly set.  
+
+1. Open ``tomoman_relion_motioncorr.param``.
+The tomolist parameters should already be correctly set.  
 
 2. The TOMOMAN parameters field set parameters for how TOMOMAN runs. 
 Most tasks have some ``force`` parameter, which tells TOMOMAN to repeat the task on tilt series that have already been processed. 

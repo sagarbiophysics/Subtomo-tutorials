@@ -56,5 +56,19 @@ This results in a ``pre-tilt`` of the sample, and the data acquition for dose-sy
 10. AreTomo can reconstruct output tomographic volumes using either ``SART`` or ``WBP``. 
 In this case we will set ``SART`` to ``none`` and ``WBP`` to ``1`` in order to get output volumes using ``WBP``. 
 
-11. AreTomo 
+11. In addition to the global tilt-series alignment, AreTomo can also use either a regular grid (patches) or user defined Regions of Interest (ROIs) to solve for local deformations. 
+We will not use this functionality for the practical as the local tranforms are not compatible with downstream subtomogram averaging workflows.
 
+12. ``OutIMOD`` and ``OutXF``, when set to ``1``, AreTomo will write global transformations in IMOD formated ``.xf`` file. 
+
+13. Leave ``DarkTol`` to the default value of ``0.001``. 
+When this value is set higher, AreTomo will automatically exclude darker tilt images. 
+
+14. When ``ForceAlign`` is set to ``1``, TOMOMAN will also rerun the AreTomo task for already processed tomograms. 
+
+15. Save Changes to the ``tomoman_aretomo.param``. 
+Submit this TOMOMAN job to SLURM. 
+First, make sure the bash file has the correct ``paramfilename``. 
+Then, in a terminal, run the bash script.
+
+16. Once the job is finished, you can open the reconstructed tomogram in ``bin8_aretomo/`` folder using ``3dmod``.

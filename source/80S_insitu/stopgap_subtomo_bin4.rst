@@ -9,7 +9,10 @@ Bin8 Subtomogram Averaging with STOPGAP
 
 
 In this part, we will first prepare the necessary files and folders for a STOPGAP subtomogram averaging job. 
-Then we will perform â€œreference-freeâ€ subtomogram averaging on a single HIV particle; this will serve as a de novo reference for the whole dataset. 
+Then we will perform subtomogram averaging on 80S particles picked on a single tomogram using template matching approach; this will serve as a reference for the whole dataset. 
+
+.. note::
+    In our experience, rerunning template matching using a reference generated from the dataset gives sharped peaks.
 
 Preparing a STOPGAP folder
 -----------------
@@ -17,8 +20,8 @@ Preparing a STOPGAP folder
 
 Here we will initialize a subtomogram averaging folder with the necessary directory structure. 
 
-1. In your ``HIV_practical`` directory, make ``subtomo/i/`` subdirectory. 
-Change into the ``init_ref/`` directory. 
+1. In your ``80S_practical`` directory, make ``subtomo/init_bin4/`` subdirectory. 
+Change into the ``init_bin4/`` directory. 
  
 2. Load the STOPGAP module.
  

@@ -14,6 +14,7 @@ Contents
 
 -   :doc:`Reading`
 -   :doc:`Team`
+    :doc:`GettingStarted`
 -   :doc:`HIV/index`
 -   :doc:`80S_insitu/index`
 -   :doc:`Reference/index`
@@ -26,6 +27,7 @@ Contents
 
     Reading
     Team
+    GettingStarted
     HIV/index
     80S_insitu/index
     Reference/index

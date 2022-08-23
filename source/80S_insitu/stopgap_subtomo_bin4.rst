@@ -1,4 +1,4 @@
-Subtomogram Averaging at bin4
+Subtomogram Averaging at bin8
 ===============
 
    
@@ -20,8 +20,8 @@ Preparing a STOPGAP folder
 
 Here we will initialize a subtomogram averaging folder with the necessary directory structure. 
 
-1. In your ``80S_practical`` directory, make ``subtomo/init_bin4/`` subdirectory. 
-Change into the ``init_bin4/`` directory. 
+1. In your ``80S_practical`` directory, make ``subtomo/init_bin8/`` subdirectory. 
+Change into the ``init_bin8/`` directory. 
  
 2. Load the STOPGAP module.
  
@@ -103,7 +103,7 @@ Extract Subtomograms
 -----------------
 
 
-With the lists we have prepared, we are now ready to extract our subtomograms. 
+With the lists we have already prepared during the template matching step, we are now ready to extract our subtomograms. 
 STOPGAP jobs typically work by first generating a parameter file for a given task, and submitting it to SLURM using the ``run_stopgap.sh`` script. 
 
 1. Open the ``stopgap_extract_parser.sh`` in a text editor (e.g. gedit).
@@ -118,10 +118,10 @@ Since these are all lists, they are assumed to be in the ``listdir``.
      since we are providing a ``tomolist``, the ``tomodir`` is ignored. 
  
 4. Set the extraction parameters. 
-The default ``subtomo_name`` is ``â€˜subtomoâ€™``. 
+The default ``subtomo_name`` is ``subtomo``. 
 For ``boxsize``, ``32`` should be sufficient here.
 The ``pixelsize`` is ``10.8`` for bin8 data. 
-For ``output_format``, we find that ``â€˜mrc8â€™`` works well, this saves the subtomogram as an 8-bit ``.mrc`` file.
+For ``output_format``, we find that ``mrc8`` works well, this saves the subtomogram as an 8-bit ``.mrc`` file.
 While 8-bit only provides 256 gradations, we generally find this is sufficient for the local information contained within a subtomogram. 
 During extraction, the subtomogram is cropped and its values are floated between 0 and 255, rounded, and saved. 
  
@@ -131,8 +131,8 @@ During extraction, the subtomogram is cropped and its values are floated between
 The main parameters here are the parallelization options and the directories. 
 Update the ``rootdir`` and ``paramfilename``.
  
-7. For parallelization parameters, set ``run_type`` to ``â€˜slurmâ€™``, ``nodes`` to ``1``, and ``n_cores`` to ``96`` divided by the number of participants. 
-STOPGAP is a CPU-only package, so set ``queue`` to ``â€˜centosâ€™``, which are the CPU nodes. 
+7. For parallelization parameters, set ``run_type`` to ``slurm``, ``nodes`` to ``1``, and ``n_cores`` to ``96`` divided by the number of participants. 
+STOPGAP is a CPU-only package, so set ``queue`` to ``'centos'``, which are the CPU nodes. 
 The ``/scratch`` space is relatively fast and there is no local storage on the nodes, so set ``copy_local`` to ``0``. 
  
 8. Run STOPGAP by running the ``run_stopgap.sh`` script. 
@@ -140,11 +140,10 @@ STOPGAP is setup here to run through the ``stopgap_watcher``, which is a separat
 This is not required; for clusters where programs are not allowed to be run on submission nodes, ``stopgap_watcher`` can be run on any computer that has access to the working directory. 
  
 
-Calculate Starting Reference
+Generating Initial average
 -----------------
 
 
-â€œReference-freeâ€ basically refers to the fact that we are not using an external reference. 
 Since a reference is always required for iterative alignment, we can generate an starting reference by averaging the extracted subtomograms. 
 In this case, since we have picked our positions using geometry, we have rough starting angles; our initial reference will not be a sphere, but instead of rough features. 
 

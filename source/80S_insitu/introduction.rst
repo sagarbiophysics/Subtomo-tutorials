@@ -16,7 +16,7 @@ The goals for this session include:
 
 .. note::
     This section assumes basic working knowledge of TOMOMAN.
-    Make sure you followed through the `HIV indexpage`_ practical.
+    Make sure you followed through the ``HIV`` practical.
 
 
 Test Dataset

@@ -23,20 +23,20 @@ Chimera may open the tomogram as an isosurface volume; if so visualize it in pla
 Set the Origin index to 0 and the voxel size to 1. 
 You may need to recenter the view; the focus command will help here.
  
-3. If you want more contrast to better visualize the HIV particles, you can apply a gaussian filter (Volume Viewer > Tools > Volume Filter). 
+3. If you want more contrast to better visualize the HIV particles, you can apply a gaussian filter (``Volume Viewer > Tools > Volume Filter``). 
 A gaussian with of 1 should be sufficient, but remember to uncheck the “Displayed subregion only” option. 
  
-4. Before picking HIV particles, it may be useful to shift the camera to use orthographic projections (Side view > Camera > Projection > Orthographic).
+4. Before picking HIV particles, it may be useful to shift the camera to use orthographic projections (``Side view > Camera > Projection > Orthographic``).
  
 5. In the Volume Viewer, open the Volume Tracer tool. 
 I would suggest setting the marker radius to 20, which makes a sphere smaller than the HIV particles, but large enough to assess centering. 
 Move through the place and place a marker at each HIV particle. 
 I recommend taking only the complete particles.
  
-6. When you have finished marking your particles, save the marker set into the tilt series folder in as metadata/sphere/sphere.cmm. 
+6. When you have finished marking your particles, save the marker set into the tilt series folder in as ``metadata/sphere/sphere.cmm``. 
 This naming convention is important for parsing the metadata files into the tomolist later. 
  
-7. In the main window, open the Pick Particles tool (Tools > Utilities > Pick Particle). Load the marker file and press Display. 
+7. In the main window, open the Pick Particles tool (``Tools > Utilities > Pick Particle``). Load the marker file and press Display. 
 A series of sliders will a appear for each marker. Adjust them until the radius for each as needed. 
 Since the HIV particles are not perfect spheres, adjust the radius to a point with the best compromise. 
 Also, there are several concentric layers to each HIV particle; set the radius for each sphere so that the edge is on similar layers. 

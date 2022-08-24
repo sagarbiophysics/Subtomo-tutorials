@@ -1,6 +1,3 @@
-Subtomogram Averaging at bin8
-===============
-
    
 Bin8 Subtomogram Averaging with STOPGAP
 =============

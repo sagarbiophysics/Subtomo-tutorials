@@ -25,7 +25,7 @@ For this dataset, most of the defaults are fine, but be sure to set the ``eer_do
 TOMOMAN will parse one EER file per tilt-series for number of EER frames and will calculare ``eer_grouping`` parameter to obtain set number of ``eer_dosefractions``.
 
 .. note ::
-     As of now, TOMOMAN doesn't support motion correction for tilt-series data in EER format using anything other than constant exposure over the course of a tilt-series. 
+     As of now, TOMOMAN doesn't support motion correction for tilt-series data in EER format using anything other than constant exposure/tilt image over the course of a tilt-series. 
  
 6. Submit this TOMOMAN job to SLURM. First, make sure the bash file has the correct ``paramfilename``. 
 Then, in a terminal, run the bash script. 

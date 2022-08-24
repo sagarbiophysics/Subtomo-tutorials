@@ -15,7 +15,7 @@ We then give this power spectrum to ``CTFFIND4`` for Thon ring fitting.
 The directory parameters should already be correct. 
  
 2.	The tiltctf parameters include the parameters for calculating power spectra. 
-In general, a ``ps_size`` of ``512`` is sufficient and a 0.05 um defocus tolerance is sufficient Defocus tolerance is the maximum allowed tolerance when deciding how to tile tilted images, but tiltctf also always uses a minimum tile overlap of Â½ the power spectrum size, so increasing this number may not directly affect computation time. 
+In general, a ``ps_size`` of ``512`` is sufficient and a 0.05 um defocus tolerance is sufficient Defocus tolerance is the maximum allowed tolerance when deciding how to tile tilted images, but tiltctf also always uses a minimum tile overlap of ½ the power spectrum size, so increasing this number may not directly affect computation time. 
  
 3.	Fourier scaling should be used if the data is collected for high-resolution work (e.g. pixel size smaller than ~2 Å/pix). 
 This helps with potential aliasing in the power spectrum. 

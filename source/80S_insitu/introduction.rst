@@ -10,7 +10,7 @@ The goals for this session include:
 - Setting up TOMOMAN parameter files
 - Performing preprocessing using TOMOMAN for ``EER`` data
 - Automated fiducial-less alignment in ``AreTomo``
-- Template matching using STOPGAP
+- Setting up and running ``Template matching`` using STOPGAP
 - Subtomogram averaging in STOPGAP
 - Setting up simulated annealing multireference classification in STOPGAP
 

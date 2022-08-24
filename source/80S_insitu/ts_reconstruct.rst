@@ -7,8 +7,9 @@ CTF-Estimation
 
 CTF-estimation for tomography is similar to single particle images, in that Thon ring fitting is used in both. 
 However, since tilted images have a defocus gradient, different parts of the images have different Thon rings.
- TOMOMAN includes ``tiltctf``, an algorithm we developed to use tilt series alignment parameters to generate power spectra that account for this defocus gradient. 
- We then give this power spectrum to ``CTFFIND4`` for Thon ring fitting. 
+
+TOMOMAN includes ``tiltctf``, an algorithm we developed to use tilt series alignment parameters to generate power spectra that account for this defocus gradient. 
+We then give this power spectrum to ``CTFFIND4`` for Thon ring fitting. 
 
 1.	Return to MATLAB and open the ``tomoman_tiltctf.param`` file. 
 The directory parameters should already be correct. 

@@ -74,6 +74,8 @@ For this dataset, we don’t have them so this can be set to none.
 
 4. The data collection block contains information specific to the parameters used for data collection and the setup of the microscope. 
 This dataset contains gain-normalized .mrc files, so set the ``gainref`` parameter to ``none``. 
+In This particular case, we know that EER images need to be flipped vertical. 
+Hence, ``mirror_stack`` is set to ``y``.
 All other defaults are fine.  
 
 5. The override ``.mdoc`` values comment block allows users to override fields that are normally parsed from the ``.mdoc`` file. 

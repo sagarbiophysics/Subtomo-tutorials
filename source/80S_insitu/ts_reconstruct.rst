@@ -17,9 +17,9 @@ The directory parameters should already be correct.
 2.	The tiltctf parameters include the parameters for calculating power spectra. 
 In general, a ``ps_size`` of ``512`` is sufficient and a 0.05 um defocus tolerance is sufficient Defocus tolerance is the maximum allowed tolerance when deciding how to tile tilted images, but tiltctf also always uses a minimum tile overlap of Â½ the power spectrum size, so increasing this number may not directly affect computation time. 
  
-3.	Fourier scaling should be used if the data is collected for high-resolution work (e.g. pixel size smaller than ~2 Ã… /pix). 
+3.	Fourier scaling should be used if the data is collected for high-resolution work (e.g. pixel size smaller than ~2 Å/pix). 
 This helps with potential aliasing in the power spectrum. 
-For this dataset, a ``Fourier scaling`` of 2 means the Nyquist frequency in the power spectra will be 5.4 Ã…. 
+For this dataset, a ``Fourier scaling`` of 2 means the Nyquist frequency in the power spectra will be 5.4 Å. 
 In practice, this is not a problem as tilt series data is collected with such low dose per image that Thon rings cannot be fit to very high resolutions.
  
 4.	``Defocus range`` is a TOMOMAN parameter that defines the search range that ``CTFFIND4`` will use.
@@ -71,10 +71,10 @@ For instance, bin 4 tomograms will be placed in: ``[root_dir]/[output_dir_prefix
 7. The additional parameters include the ``recons_list``, which allows for reconstructing a subset of tomograms. 
 Otherwise, all non-skipped tomograms in the tomolist will be reconstructed. 
  
-8.	``Fourier3D`` is a program for Fourier cropping volumes written by Beata TuroÅˆovÃ¡. 
+8.	``Fourier3D`` is a program for Fourier cropping volumes written by Beata Turoňová. 
 The ``f3d_memlimit`` parameter sets a limit to how much memory Fourier3D can use; more memory allows for faster computation times. For this tutorial, set this to ``10000``.
  
-9.	NovaCTFâ€™s approach to CTF-correction assumes that the center of mass is at the center of the tomograms; this is why we took the time to properly center the tomogram during tilt series alignment. 
+9.	NovaCTF's approach to CTF-correction assumes that the center of mass is at the center of the tomograms; this is why we took the time to properly center the tomogram during tilt series alignment. 
 If this is off, the reconstructed tomogram will contain a systematic error in all planes. 
 To refine the tomogram center, novaCTF allows you to generate an offset value for recentering. 
 TOMOMAN can take an input ``STOPGAP motivelist``, and use the center of mass of the particles as the refined center. 

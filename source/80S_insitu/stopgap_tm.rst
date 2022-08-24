@@ -5,6 +5,7 @@ In this section we will pick 80S Ribosome particles in ``bin8_aretomo`` tomograp
 For this demonstration we will work with a single tomogram ``ay19102021_rid_3_atc_lamella1_position1_dose-filt.rec``.
 
 The goals for this section include:
+
 - Setting up a STOPGAP template matching folder.
 - Preparing tomographic volumes for template matching and generating tomogram volume masks.
 - Generating a template from PDB model.

@@ -8,8 +8,8 @@ The goals for this section include:
 
 - Setting up a STOPGAP template matching folder.
 - Preparing tomographic volumes for template matching and generating tomogram volume masks.
-- Generating a template from PDB model.
-- Generating an angle list defining angular search used for template matching. 
+- Generating a ``template`` from PDB model.
+- Generating an ``angle list`` defining angular search used for template matching. 
 - Preparing necessary ``lists`` for template matching run.
 - Running a template matching job on SLURM.
 

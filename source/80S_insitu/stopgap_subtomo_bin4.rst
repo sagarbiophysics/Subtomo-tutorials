@@ -44,7 +44,7 @@ The first is a motivelist; we will parse out a single HIV particle from the one 
 The second is a wedgelist, which contains the necessary information for missing wedge compensation. 
 The third is a STOPGAP tomolist, which links the paths and names of the tomograms to use with the ``tomo_num`` field in the tomolist and motivelist; this is used for subtomogram extraction. 
 
-1. In MATLAB, load the motivelist we have already generated:
+1. In MATLAB, load the motivelist we have already generated during particle picking/template matching step:
 
 ::
      
@@ -59,38 +59,26 @@ The third is a STOPGAP tomolist, which links the paths and names of the tomogram
      
      idx1 = motl.tomo_num == 1;
  
-3. Next we will index by object. We will pick object 1:
+3. We will parse the subtomograms into a new motivelist:
 
 ::
      
-     idx2 = motl.object == 1;
- 
-4. We will parse the subtomograms into a new motivelist:
-
-::
-     
-     new_motl = sg_motl_parse_type2(motl,(idx1&idx2));
-
-.. note::
-     we combined the two indices we made using MATLABâ€™s logical operators. 
+     new_motl = sg_motl_parse_type2(motl,(idx1));
  
 5. Save the new motivelist:
 
 ::
      
-     sg_motl_write2('allmotl_tomo1_obj1_1.star',new_motl);
+     sg_motl_write2('allmotl_tomo1_1.star',new_motl);
 
 
 ..note::
      STOPGAP motivelists have the following format ``[name]_[iteration].star``, where iteration is the iteration of the subtomogram averaging run. 
      The name is arbitrary but should not contain non-letter characters except for underscores. 
  
-6. Generate a wedgelist:
+6. We already generated a Wedgelist during the template matching step.
 
-::
-     
-     sg_wedgelist_from_tomolist('tomolist.mat','wedgelist.star');
- 
+
 7. Generate a STOPGAP tomolist:
 
 ::

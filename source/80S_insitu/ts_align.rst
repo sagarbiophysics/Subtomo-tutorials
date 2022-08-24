@@ -8,6 +8,7 @@ As this turorial dataset consists of the tilt-series acquired on cryo-FIB milled
 However, multiple fiducial-less methods have been developed. 
 
 Notably: 
+
 - Patch tracking in IMOD
 - fiducial-less alignment using ALIGNATOR
 - fiducial-less alignment using AreTomo

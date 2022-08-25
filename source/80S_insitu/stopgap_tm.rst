@@ -58,14 +58,62 @@ Copy and edit script ``sg_tm_generate_tomo_list.m`` for appropriate paths.
 Run the script. 
 
 
+6. Move into ``tomoman_single`` folder where you preprocessed tilt-series and generate a wedgelist:
+
+::
+     
+     sg_wedgelist_from_tomolist('tomolist.mat','wedgelist.star');
+ 
+8. Copy the list into the lists/ subfolder in your STOPGAP template matching directory. 
+
 
 Generating the angle list
 -----------------
+
+1. Open ``sg_tm_generate_anglist.m``
+
+2. ``anginc`` parameter defines the angular sampling on the unit sphere.
+For 80S ribosmes, ``12`` or ``15`` degrees sampling is often sufficient. 
+Smaller exposures result in larger number of angles STOPGAP will search during template matching. 
+We will usr ``15`` degrees to speed up computing. 
+
+3. you can specify the symmetry of the template you are searching using ``sym``. 
+For 80S Ribosome, it is set to ``c1``.
+
+4. Finally, set ``output_name`` to reflect ``anginc`` and ``sym``. 
+Here, we will set it to ``anglist_15deg_c1.csv``.
+
+Preparing a template using a PDB model
+-----------------
+
+Most often you will not have a map for the particle you want to pick in the tomographic volume. 
+For this tutorial we will generate a simulated map from PDB model for 80S Ribosome. 
+
+1. Download ``mmCIF`` format model for PDBID ``6gqv``.
+
+2. Open it using ``ChimeraX`` and save it as ``.pdb`` formatted file. 
+
+3. We will use ``simulate`` program from ``cisTEM`` package to generate a 3d map. 
+Execute ``simulate`` and follow through command pront.
+
+4. Open generated map using ``3dmod``. 
+One can see that the contrast of this map is inverted compared to the tomographic volume. 
+
+5. We will use ``relion_image_handler`` to invert the contrast. 
+
+::
+
+
+6. Next, we want to bin this map ``8x`` in order to use it for template matching on ``8x`` binned tomogram. 
+We will use ``IMOD's`` ``binvol`` program to bin the simulated volume by the factor of 8. 
 
 
 Generating a template list
 -----------------
 
+Next, we should generate a template list for STOPGAP template matching. 
+
+1. open ``sg_tm_generate_
 
 
 Generating a template matching parameter file
@@ -75,3 +123,15 @@ Generating a template matching parameter file
 
 Submitting temnplate matching job on SLURM
 -----------------
+
+
+
+
+
+
+
+
+Extracting particle positions
+-----------------
+
+

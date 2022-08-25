@@ -95,6 +95,7 @@ Most often you will not have a map for the particle you want to pick in the tomo
 For this tutorial we will generate a simulated map from PDB model for 80S Ribosome. 
 
 1. Download ``mmCIF`` format model for PDBID ``6gqv``.
+Copy it to ``tm/bin8_single/tmpl`` directory.
 
 2. Open it using ``ChimeraX`` and save it as ``.pdb`` formatted file. 
 

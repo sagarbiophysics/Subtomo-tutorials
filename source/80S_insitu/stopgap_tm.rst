@@ -38,9 +38,24 @@ Re-running ``stopgap_intialize_folder.sh`` for other jobs will add the additiona
 Generating Volume masks for Tomograms and tomogram list
 -----------------
 
-Next, we will create a tomogram folder ``tomos`` inside the template matching directory ``bin8_single``
+Next, we will create a tomogram folder ``tomos`` inside the template matching directory ``bin8_single``. 
 
-1. Create a symbolic link to 
+1. Create a symbolic link to the reconstructed tomogram in ``tomoman_single/novactf_bin8``.
+
+2. Open tomogram using ``3dmod`` and generate a boundary model. 
+Save the model as ``tomo_name.mod``.
+
+3. Copy and execute bash script ``model2point_all.sh`` from ``subtomo_practical/template_matching_scripts/``.
+
+4. Open ``matlab`` and navigate to ``tomos`` folder. 
+Open and edit ``creat_boundarymask.m`` for ``tomo_dir``.
+``padding`` defines number of pixels to pad along the XY edge of the tomogram. 
+Leave it as ``10``.
+run `` creat_boundarymask.m``.
+
+5. Move into ``bin8_single/lists`` folder. 
+Copy and edit script ``sg_tm_generate_tomo_list.m`` for appropriate paths.
+Run the script. 
 
 
 

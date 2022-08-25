@@ -109,6 +109,7 @@ One can see that the contrast of this map is inverted compared to the tomographi
 
 ::
 
+    relion_image_handler --i 6gqv_simulate_1.96angpix_5ang_bfac-30.mrc --multiple_constant -1 --o 6gqv_simulate_1.96angpix_5ang_bfac-30_inv.mrc
 
 6. Next, we want to bin this map ``8x`` in order to use it for template matching on ``8x`` binned tomogram. 
 We will use ``IMOD's`` ``binvol`` program to bin the simulated volume by the factor of 8. 
@@ -171,3 +172,16 @@ Extracting particle positions
 
 Once template matching is finished we will use ``sg_tm_generate_motl.m`` to extract particle positios.
 
+1. Navigate to ``/path/to/tm/bin8_single/``. Open ``sg_tm_generate_motl.m`` using matlab.
+
+::
+
+   edit sg_tm_generate_motl.m
+   
+
+2. set ``rootdir`` to ``/path/to/tm/bin8_single/``.
+
+3. Leave ``proc_idx = []``.
+
+4. Set ``plot_values = true``. 
+Ignore ``threshold`` as the script will ask you to generate

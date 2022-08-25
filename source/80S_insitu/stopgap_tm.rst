@@ -42,6 +42,11 @@ Next, we will create a tomogram folder ``tomos`` inside the template matching di
 
 1. Create a symbolic link to the reconstructed tomogram in ``tomoman_single/novactf_bin8``.
 
+:: 
+
+   ln -sf /path/to/tomoman_single/novactf_bin8/ay19102021_rid_3_atc_lamella1_position1_dose-filt.rec /path/to/tm/bin8_single/tomos/
+   
+
 2. Open tomogram using ``3dmod`` and generate a boundary model. 
 Save the model as ``tomo_name.mod``.
 

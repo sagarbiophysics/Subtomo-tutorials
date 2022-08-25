@@ -108,18 +108,46 @@ One can see that the contrast of this map is inverted compared to the tomographi
 We will use ``IMOD's`` ``binvol`` program to bin the simulated volume by the factor of 8. 
 
 
+7. We will also need a mask for template matching. 
+This mask should be generated/copied into ``masks/`` directory.
+For 80S Ribosome we can use a spherical mask which can be generated as follows:
+
+::
+    sg_mrcwrite('spheremask.mrc', sg_sphere(32,11,4));
+    
+    
+
 Generating a template list
 -----------------
 
 Next, we should generate a template list for STOPGAP template matching. 
 
-1. open ``sg_tm_generate_
+1. open ``sg_tm_template_list_add_entry.m``.
+
+2. Set ``tmpl_name``, ``mask_name``, ``sym`` and ``anglist_name`` to appropriate files generated in previous steps. 
+Run the script inside ``lists`` folder using matlab.
 
 
 Generating a template matching parameter file
 -----------------
+We have now generated all required files for a template matching run. 
+One can now create a template matching ``paramfile`` using ``stopgam_tm_parser.sh``.
 
+1. Open ``stopgap_tm_parser.sh``.
 
+2. Edit ``root_dir`` to ``/absolute/patha/to/bin8_single/``.
+
+3. Under ``File options`` block, Set ``tomolist_name`` to ``tomolist.txt``.
+Set ``wedgelist_name`` to ``wedgelist.star``.
+``tlist_name`` is set to template list name you generated in the previous section. 
+
+4. We are running template matching on ``8`` times binned data.
+
+5. Set bandpass filters as we discussed. In short set ``lp_rad`` to get lowpass-filter arounf ``35`` Angstroms. 
+
+6. Rest of the parameters can be left to defaults. 
+
+7. Execute template matching parser in a terminal.
 
 Submitting temnplate matching job on SLURM
 -----------------

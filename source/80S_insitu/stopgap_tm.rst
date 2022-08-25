@@ -152,14 +152,16 @@ Set ``wedgelist_name`` to ``wedgelist.star``.
 Submitting temnplate matching job on SLURM
 -----------------
 
+1. Open ``run_stopgap.sh``. 
+Set ``root_dir`` to point at template matching direcory.
+``paramfilename``in this case is ``tm_param.star``.
 
-
-
-
+2. Close and execute ``run_stopgap.sh`` to run the template matching job.
 
 
 
 Extracting particle positions
 -----------------
 
+Once template matching is finished we will use ``sg_tm_generate_motl.m`` to extract particle positios.
 

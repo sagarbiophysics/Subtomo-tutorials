@@ -120,6 +120,7 @@ This mask should be generated/copied into ``masks/`` directory.
 For 80S Ribosome we can use a spherical mask which can be generated as follows:
 
 ::
+
     sg_mrcwrite('spheremask.mrc', sg_sphere(32,11,4));
     
     

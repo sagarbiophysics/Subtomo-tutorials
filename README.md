@@ -4,7 +4,8 @@ GitHub repository for subtomogram averaging tutorials
 
 Read the documentaion here:
 
-https://subtomo.readthedocs.io/en/latest/
+https://subtomo.readthedocs.io/
+
 
 # Authors
 
